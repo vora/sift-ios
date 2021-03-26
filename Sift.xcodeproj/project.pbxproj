@@ -154,39 +154,22 @@
 		7168EE031C7B977500A88245 /* Sift */ = {
 			isa = PBXGroup;
 			children = (
-				CDE6D9C8260E81670095CACB /* NSData+GZIP.h */,
+				CDE6D9EC260E95D10095CACB /* include */,
+				CDE6D9ED260E95DA0095CACB /* privateInclude */,
 				CDE6D9C7260E81670095CACB /* NSData+GZIP.m */,
 				7168EE061C7B977500A88245 /* Info.plist */,
-				71E15CF31D95C8FA00A0305C /* SiftCircularBuffer.h */,
 				71E15CF41D95C8FA00A0305C /* SiftCircularBuffer.m */,
-				715AB3EA1D9DBBFB00771402 /* SiftCompatibility.h */,
-				716BEB861C7D304D009C3706 /* SiftDebug.h */,
-				716BEB881C7D336B009C3706 /* SiftEvent.h */,
 				716BEB8C1C7D3695009C3706 /* SiftEvent.m */,
-				7168EE2B1C86250100A88245 /* SiftEvent+Private.h */,
-				713D85BC1D8744040011D5FE /* SiftHtDictionary.h */,
 				713D85BE1D87441A0011D5FE /* SiftHtDictionary.m */,
-				71B1B58C1D8B281900EA9B17 /* SiftIosAppState.h */,
 				71B1B58E1D8B282C00EA9B17 /* SiftIosAppState.m */,
-				71B1B5961D8C700C00EA9B17 /* SiftIosAppStateCollector.h */,
 				71B1B5981D8C701E00EA9B17 /* SiftIosAppStateCollector.m */,
-				8B5874F42552FE0C00CF8A02 /* SiftIosAppStateCollector+Private.h */,
-				713D85981D627E860011D5FE /* SiftIosDeviceProperties.h */,
 				713D85991D627E9F0011D5FE /* SiftIosDeviceProperties.m */,
-				7168EE321C864A4100A88245 /* SiftIosDevicePropertiesCollector.h */,
 				7168EE331C864A4100A88245 /* SiftIosDevicePropertiesCollector.m */,
-				7168EE1D1C7E7A6800A88245 /* SiftQueue.h */,
 				7168EE1F1C7E7B6700A88245 /* SiftQueue.m */,
-				716BEB891C7D336B009C3706 /* SiftQueueConfig.h */,
-				71E15CFA1D95D14700A0305C /* SiftTokenBucket.h */,
 				71E15CFC1D95D15900A0305C /* SiftTokenBucket.m */,
-				7168EE251C7FB80C00A88245 /* SiftUploader.h */,
 				7168EE261C7FB80C00A88245 /* SiftUploader.m */,
-				716BEB8D1C7D3695009C3706 /* SiftUtils.h */,
 				716BEB8E1C7D3695009C3706 /* SiftUtils.m */,
-				7168EE041C7B977500A88245 /* Sift.h */,
 				716BEB8F1C7D3695009C3706 /* Sift.m */,
-				7168EE211C7F978D00A88245 /* Sift+Private.h */,
 			);
 			path = Sift;
 			sourceTree = "<group>";
@@ -209,6 +192,39 @@
 				7168EE101C7B977500A88245 /* SiftTests.m */,
 			);
 			path = SiftTests;
+			sourceTree = "<group>";
+		};
+		CDE6D9EC260E95D10095CACB /* include */ = {
+			isa = PBXGroup;
+			children = (
+				7168EE041C7B977500A88245 /* Sift.h */,
+				715AB3EA1D9DBBFB00771402 /* SiftCompatibility.h */,
+				716BEB881C7D336B009C3706 /* SiftEvent.h */,
+				716BEB891C7D336B009C3706 /* SiftQueueConfig.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		CDE6D9ED260E95DA0095CACB /* privateInclude */ = {
+			isa = PBXGroup;
+			children = (
+				CDE6D9C8260E81670095CACB /* NSData+GZIP.h */,
+				7168EE211C7F978D00A88245 /* Sift+Private.h */,
+				71E15CF31D95C8FA00A0305C /* SiftCircularBuffer.h */,
+				716BEB861C7D304D009C3706 /* SiftDebug.h */,
+				7168EE2B1C86250100A88245 /* SiftEvent+Private.h */,
+				713D85BC1D8744040011D5FE /* SiftHtDictionary.h */,
+				71B1B58C1D8B281900EA9B17 /* SiftIosAppState.h */,
+				71B1B5961D8C700C00EA9B17 /* SiftIosAppStateCollector.h */,
+				8B5874F42552FE0C00CF8A02 /* SiftIosAppStateCollector+Private.h */,
+				713D85981D627E860011D5FE /* SiftIosDeviceProperties.h */,
+				7168EE321C864A4100A88245 /* SiftIosDevicePropertiesCollector.h */,
+				7168EE1D1C7E7A6800A88245 /* SiftQueue.h */,
+				71E15CFA1D95D14700A0305C /* SiftTokenBucket.h */,
+				7168EE251C7FB80C00A88245 /* SiftUploader.h */,
+				716BEB8D1C7D3695009C3706 /* SiftUtils.h */,
+			);
+			path = privateInclude;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

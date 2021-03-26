@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "Sift",
+    platforms: [
+        .iOS(.v10)
+    ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -23,7 +26,11 @@ let package = Package(
             dependencies: [],
             path: "Sift",
             exclude: ["Info.plist", "README.md"],
-            publicHeadersPath: "."),
+            publicHeadersPath: nil,
+            cSettings: [
+                .headerSearchPath("privateInclude")
+            ]
+        ),
         .testTarget(
             name: "sift-iosTests",
             dependencies: ["Sift"]),

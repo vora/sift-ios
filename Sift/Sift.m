@@ -52,6 +52,11 @@ static const SiftQueueConfig SFDefaultEventQueueConfig = {
     return instance;
 }
 
+- (instancetype)init {
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
 - (instancetype)initWithRootDirPath:(NSString *)rootDirPath {
     self = [super init];
     if (self) {
