@@ -51,6 +51,7 @@
 		8B5874FF2552FE8A00CF8A02 /* SiftIosAppStateCollector+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5874F42552FE0C00CF8A02 /* SiftIosAppStateCollector+Private.h */; };
 		CDE6D9C9260E81670095CACB /* NSData+GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE6D9C7260E81670095CACB /* NSData+GZIP.m */; };
 		CDE6D9CA260E81670095CACB /* NSData+GZIP.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE6D9C8260E81670095CACB /* NSData+GZIP.h */; };
+		CDE6DA1B260EA7730095CACB /* Sift.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE6DA1A260EA7730095CACB /* Sift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		8B5874F42552FE0C00CF8A02 /* SiftIosAppStateCollector+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SiftIosAppStateCollector+Private.h"; sourceTree = "<group>"; };
 		CDE6D9C7260E81670095CACB /* NSData+GZIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+GZIP.m"; sourceTree = "<group>"; };
 		CDE6D9C8260E81670095CACB /* NSData+GZIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+GZIP.h"; sourceTree = "<group>"; };
+		CDE6DA1A260EA7730095CACB /* Sift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,22 +156,8 @@
 		7168EE031C7B977500A88245 /* Sift */ = {
 			isa = PBXGroup;
 			children = (
-				CDE6D9EC260E95D10095CACB /* include */,
-				CDE6D9ED260E95DA0095CACB /* privateInclude */,
-				CDE6D9C7260E81670095CACB /* NSData+GZIP.m */,
-				7168EE061C7B977500A88245 /* Info.plist */,
-				71E15CF41D95C8FA00A0305C /* SiftCircularBuffer.m */,
-				716BEB8C1C7D3695009C3706 /* SiftEvent.m */,
-				713D85BE1D87441A0011D5FE /* SiftHtDictionary.m */,
-				71B1B58E1D8B282C00EA9B17 /* SiftIosAppState.m */,
-				71B1B5981D8C701E00EA9B17 /* SiftIosAppStateCollector.m */,
-				713D85991D627E9F0011D5FE /* SiftIosDeviceProperties.m */,
-				7168EE331C864A4100A88245 /* SiftIosDevicePropertiesCollector.m */,
-				7168EE1F1C7E7B6700A88245 /* SiftQueue.m */,
-				71E15CFC1D95D15900A0305C /* SiftTokenBucket.m */,
-				7168EE261C7FB80C00A88245 /* SiftUploader.m */,
-				716BEB8E1C7D3695009C3706 /* SiftUtils.m */,
-				716BEB8F1C7D3695009C3706 /* Sift.m */,
+				CDE6DA1E260EA8050095CACB /* objc */,
+				CDE6DA20260EA80F0095CACB /* swift */,
 			);
 			path = Sift;
 			sourceTree = "<group>";
@@ -225,6 +213,37 @@
 				716BEB8D1C7D3695009C3706 /* SiftUtils.h */,
 			);
 			path = privateInclude;
+			sourceTree = "<group>";
+		};
+		CDE6DA1E260EA8050095CACB /* objc */ = {
+			isa = PBXGroup;
+			children = (
+				CDE6D9EC260E95D10095CACB /* include */,
+				CDE6D9ED260E95DA0095CACB /* privateInclude */,
+				7168EE061C7B977500A88245 /* Info.plist */,
+				CDE6D9C7260E81670095CACB /* NSData+GZIP.m */,
+				716BEB8F1C7D3695009C3706 /* Sift.m */,
+				71E15CF41D95C8FA00A0305C /* SiftCircularBuffer.m */,
+				716BEB8C1C7D3695009C3706 /* SiftEvent.m */,
+				713D85BE1D87441A0011D5FE /* SiftHtDictionary.m */,
+				71B1B58E1D8B282C00EA9B17 /* SiftIosAppState.m */,
+				71B1B5981D8C701E00EA9B17 /* SiftIosAppStateCollector.m */,
+				713D85991D627E9F0011D5FE /* SiftIosDeviceProperties.m */,
+				7168EE331C864A4100A88245 /* SiftIosDevicePropertiesCollector.m */,
+				7168EE1F1C7E7B6700A88245 /* SiftQueue.m */,
+				71E15CFC1D95D15900A0305C /* SiftTokenBucket.m */,
+				7168EE261C7FB80C00A88245 /* SiftUploader.m */,
+				716BEB8E1C7D3695009C3706 /* SiftUtils.m */,
+			);
+			path = objc;
+			sourceTree = "<group>";
+		};
+		CDE6DA20260EA80F0095CACB /* swift */ = {
+			isa = PBXGroup;
+			children = (
+				CDE6DA1A260EA7730095CACB /* Sift.swift */,
+			);
+			path = swift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,7 +325,7 @@
 				TargetAttributes = {
 					7168EE001C7B977500A88245 = {
 						CreatedOnToolsVersion = 7.2.1;
-						LastSwiftMigration = 1200;
+						LastSwiftMigration = 1240;
 					};
 					7168EE0A1C7B977500A88245 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -367,6 +386,7 @@
 				7168EE201C7E7B6700A88245 /* SiftQueue.m in Sources */,
 				713D85BF1D87441A0011D5FE /* SiftHtDictionary.m in Sources */,
 				716BEB901C7D3695009C3706 /* SiftEvent.m in Sources */,
+				CDE6DA1B260EA7730095CACB /* Sift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +570,7 @@
 		7168EE191C7B977500A88245 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SiftTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -561,6 +582,7 @@
 		7168EE1A1C7B977500A88245 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SiftTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

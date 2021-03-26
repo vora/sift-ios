@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_UNAVAILABLE;
 
 /** @return the shared instance of Sift. */
-+ (null_unspecified instancetype)sharedInstance;
++ (null_unspecified instancetype)sharedInstance NS_REFINED_FOR_SWIFT;
 // null_unspecified because the delegated initializer can actually return nil,
 // but I think it'd be due to programmer error
 
