@@ -49,8 +49,8 @@
 		71E15CFD1D95D15900A0305C /* SiftTokenBucket.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E15CFC1D95D15900A0305C /* SiftTokenBucket.m */; };
 		71E15CFF1D95DEC300A0305C /* SiftTokenBucketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E15CFE1D95DEC300A0305C /* SiftTokenBucketTests.m */; };
 		8B5874FF2552FE8A00CF8A02 /* SiftIosAppStateCollector+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5874F42552FE0C00CF8A02 /* SiftIosAppStateCollector+Private.h */; };
-		F712CDD41DD15D5400C069BD /* NSData+GZIP.h in Headers */ = {isa = PBXBuildFile; fileRef = F712CDD21DD15D5400C069BD /* NSData+GZIP.h */; };
-		F712CDD51DD15D5400C069BD /* NSData+GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = F712CDD31DD15D5400C069BD /* NSData+GZIP.m */; };
+		CDE6D9C9260E81670095CACB /* NSData+GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE6D9C7260E81670095CACB /* NSData+GZIP.m */; };
+		CDE6D9CA260E81670095CACB /* NSData+GZIP.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE6D9C8260E81670095CACB /* NSData+GZIP.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,8 +110,8 @@
 		71E15CFC1D95D15900A0305C /* SiftTokenBucket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiftTokenBucket.m; sourceTree = "<group>"; };
 		71E15CFE1D95DEC300A0305C /* SiftTokenBucketTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiftTokenBucketTests.m; sourceTree = "<group>"; };
 		8B5874F42552FE0C00CF8A02 /* SiftIosAppStateCollector+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SiftIosAppStateCollector+Private.h"; sourceTree = "<group>"; };
-		F712CDD21DD15D5400C069BD /* NSData+GZIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+GZIP.h"; sourceTree = "<group>"; };
-		F712CDD31DD15D5400C069BD /* NSData+GZIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+GZIP.m"; sourceTree = "<group>"; };
+		CDE6D9C7260E81670095CACB /* NSData+GZIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+GZIP.m"; sourceTree = "<group>"; };
+		CDE6D9C8260E81670095CACB /* NSData+GZIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+GZIP.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +154,8 @@
 		7168EE031C7B977500A88245 /* Sift */ = {
 			isa = PBXGroup;
 			children = (
-				F712CDD61DD15D5A00C069BD /* Vendor */,
+				CDE6D9C8260E81670095CACB /* NSData+GZIP.h */,
+				CDE6D9C7260E81670095CACB /* NSData+GZIP.m */,
 				7168EE061C7B977500A88245 /* Info.plist */,
 				71E15CF31D95C8FA00A0305C /* SiftCircularBuffer.h */,
 				71E15CF41D95C8FA00A0305C /* SiftCircularBuffer.m */,
@@ -210,15 +211,6 @@
 			path = SiftTests;
 			sourceTree = "<group>";
 		};
-		F712CDD61DD15D5A00C069BD /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				F712CDD21DD15D5400C069BD /* NSData+GZIP.h */,
-				F712CDD31DD15D5400C069BD /* NSData+GZIP.m */,
-			);
-			path = Vendor;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -227,7 +219,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7168EE2C1C86250100A88245 /* SiftEvent+Private.h in Headers */,
-				F712CDD41DD15D5400C069BD /* NSData+GZIP.h in Headers */,
 				716BEB911C7D3695009C3706 /* SiftUtils.h in Headers */,
 				71E15CF51D95C8FA00A0305C /* SiftCircularBuffer.h in Headers */,
 				8B5874FF2552FE8A00CF8A02 /* SiftIosAppStateCollector+Private.h in Headers */,
@@ -237,6 +228,7 @@
 				716BEB8B1C7D336B009C3706 /* SiftQueueConfig.h in Headers */,
 				7168EE1E1C7E7A6800A88245 /* SiftQueue.h in Headers */,
 				7168EE051C7B977500A88245 /* Sift.h in Headers */,
+				CDE6D9CA260E81670095CACB /* NSData+GZIP.h in Headers */,
 				713D859B1D627EA60011D5FE /* SiftIosDeviceProperties.h in Headers */,
 				71B1B58D1D8B281900EA9B17 /* SiftIosAppState.h in Headers */,
 				715AB3EB1D9DBBFB00771402 /* SiftCompatibility.h in Headers */,
@@ -346,7 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F712CDD51DD15D5400C069BD /* NSData+GZIP.m in Sources */,
+				CDE6D9C9260E81670095CACB /* NSData+GZIP.m in Sources */,
 				716BEB931C7D3695009C3706 /* Sift.m in Sources */,
 				71E15CF91D95C92300A0305C /* SiftCircularBuffer.m in Sources */,
 				7168EE281C7FB80C00A88245 /* SiftUploader.m in Sources */,
