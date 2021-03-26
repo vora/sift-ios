@@ -8,6 +8,8 @@
 #import "SiftEvent.h"
 #import "SiftQueueConfig.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  * This is the main interface you interact with Sift.
  *
@@ -28,7 +30,7 @@
 @interface Sift : NSObject
 
 /** @return the shared instance of Sift. */
-+ (instancetype)sharedInstance;
++ (null_unspecified instancetype)sharedInstance;
 
 @property (readonly) NSString *sdkVersion;
 
@@ -86,21 +88,21 @@
  *
  * NOTE: This is persisted to device's storage.
  */
-@property NSString *accountId;
+@property (nullable) NSString *accountId;
 
 /**
  * Your beacon key.  Default to nil.
  *
  * NOTE: This is persisted to device's storage.
  */
-@property NSString *beaconKey;
+@property (nullable) NSString *beaconKey;
 
 /**
  * User ID.  Default to nil.
  *
  * NOTE: This is persisted to device's storage.
  */
-@property NSString *userId;
+@property (nullable) NSString *userId;
 
 /**
  * @name Motion sensors.
@@ -170,3 +172,5 @@
 @property NSString *serverUrlFormat;
 
 @end
+
+NS_ASSUME_NONNULL_END
