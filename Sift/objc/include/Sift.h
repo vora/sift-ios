@@ -81,7 +81,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Unset the user id attached to the Sift object.
  */
-- (void)unsetUserId;
+- (void)unsetUserId DEPRECATED_MSG_ATTRIBUTE("Set userId property to nil");
 
 /**
  * @name Configurations.
