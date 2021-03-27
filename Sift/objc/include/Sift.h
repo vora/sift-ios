@@ -38,6 +38,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly) NSString *sdkVersion;
 
+/// Configure Sift with your account ID and beacon key.
+///
+/// The values provided are persisted to device storage.
+///
+/// @param accountId Your account id
+/// @param beaconKey Your beacon key
+- (void)configureWithAccountId:(NSString *)accountId beaconKey:(NSString *)beaconKey
+    NS_SWIFT_NAME(configure(accountId:beaconKey:));
+
 /** @return YES if the queue exists. */
 - (BOOL)hasEventQueue:(NSString *)identifier;
 

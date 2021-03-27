@@ -110,6 +110,11 @@ static const SiftQueueConfig SFDefaultEventQueueConfig = {
     });
 }
 
+- (void)configureWithAccountId:(NSString *)accountId beaconKey:(NSString *)beaconKey {
+    [self setAccountId:accountId];
+    [self setBeaconKey:beaconKey];
+}
+
 - (BOOL)hasEventQueue:(NSString *)identifier {
     @synchronized (_eventQueues) {
         return [_eventQueues objectForKey:identifier] ? YES : NO;
