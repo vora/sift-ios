@@ -6,8 +6,9 @@
 //  Copyright © 2021 Sift Science. All rights reserved.
 //
 
-import Sift_ObjC
+@_exported import Sift_ObjC
 
 extension Sift {
-    static var shared = Sift.__sharedInstance()
+    /// The shared instance of Sift.
+    public static let shared: Sift! = Sift.__sharedInstance()
 }

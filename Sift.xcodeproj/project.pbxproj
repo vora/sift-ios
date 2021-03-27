@@ -52,6 +52,7 @@
 		CDE6D9C9260E81670095CACB /* NSData+GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE6D9C7260E81670095CACB /* NSData+GZIP.m */; };
 		CDE6D9CA260E81670095CACB /* NSData+GZIP.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE6D9C8260E81670095CACB /* NSData+GZIP.h */; };
 		CDE6DA1B260EA7730095CACB /* Sift.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE6DA1A260EA7730095CACB /* Sift.swift */; };
+		CDE6DA23260EA9730095CACB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDE6DA22260EA9730095CACB /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +76,6 @@
 		715AB3EA1D9DBBFB00771402 /* SiftCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiftCompatibility.h; sourceTree = "<group>"; };
 		7168EE011C7B977500A88245 /* Sift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7168EE041C7B977500A88245 /* Sift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sift.h; sourceTree = "<group>"; };
-		7168EE061C7B977500A88245 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7168EE0B1C7B977500A88245 /* SiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7168EE101C7B977500A88245 /* SiftTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SiftTests.m; sourceTree = "<group>"; };
 		7168EE121C7B977500A88245 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,6 +114,7 @@
 		CDE6D9C7260E81670095CACB /* NSData+GZIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+GZIP.m"; sourceTree = "<group>"; };
 		CDE6D9C8260E81670095CACB /* NSData+GZIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+GZIP.h"; sourceTree = "<group>"; };
 		CDE6DA1A260EA7730095CACB /* Sift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sift.swift; sourceTree = "<group>"; };
+		CDE6DA22260EA9730095CACB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +157,7 @@
 		7168EE031C7B977500A88245 /* Sift */ = {
 			isa = PBXGroup;
 			children = (
+				CDE6DA22260EA9730095CACB /* Info.plist */,
 				CDE6DA1E260EA8050095CACB /* objc */,
 				CDE6DA20260EA80F0095CACB /* swift */,
 			);
@@ -220,7 +222,6 @@
 			children = (
 				CDE6D9EC260E95D10095CACB /* include */,
 				CDE6D9ED260E95DA0095CACB /* privateInclude */,
-				7168EE061C7B977500A88245 /* Info.plist */,
 				CDE6D9C7260E81670095CACB /* NSData+GZIP.m */,
 				716BEB8F1C7D3695009C3706 /* Sift.m */,
 				71E15CF41D95C8FA00A0305C /* SiftCircularBuffer.m */,
@@ -356,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE6DA23260EA9730095CACB /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
