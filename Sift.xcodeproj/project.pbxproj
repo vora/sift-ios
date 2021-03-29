@@ -260,6 +260,7 @@
 				8B5874FF2552FE8A00CF8A02 /* SiftIosAppStateCollector+Private.h in Headers */,
 				716BEB8A1C7D336B009C3706 /* SiftEvent.h in Headers */,
 				7168EE221C7F978D00A88245 /* Sift+Private.h in Headers */,
+				1E409D2525E173B20066C922 /* NSData+GZIP.h in Headers */,
 				71B1B5971D8C700C00EA9B17 /* SiftIosAppStateCollector.h in Headers */,
 				716BEB8B1C7D336B009C3706 /* SiftQueueConfig.h in Headers */,
 				7168EE1E1C7E7A6800A88245 /* SiftQueue.h in Headers */,
