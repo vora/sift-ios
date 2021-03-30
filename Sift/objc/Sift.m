@@ -52,6 +52,11 @@ static const SiftQueueConfig SFDefaultEventQueueConfig = {
     return instance;
 }
 
+- (instancetype)init {
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
 - (instancetype)initWithRootDirPath:(NSString *)rootDirPath {
     self = [super init];
     if (self) {
@@ -103,6 +108,11 @@ static const SiftQueueConfig SFDefaultEventQueueConfig = {
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
         [self archive];
     });
+}
+
+- (void)configureWithAccountId:(NSString *)accountId beaconKey:(NSString *)beaconKey {
+    [self setAccountId:accountId];
+    [self setBeaconKey:beaconKey];
 }
 
 - (BOOL)hasEventQueue:(NSString *)identifier {

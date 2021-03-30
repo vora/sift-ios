@@ -65,7 +65,7 @@ static const int64_t SF_CHECK_UPLOAD_LEEWAY = 5 * NSEC_PER_SEC;
     dispatch_async(_serial, ^{
         SF_DEBUG(@"Batch size: %lu", (unsigned long)events.count);
         [self->_batches addObject:events];
-        
+
         dispatch_async(dispatch_get_main_queue(), ^{
             if (UIApplication.sharedApplication.applicationState == UIApplicationStateBackground) {
                 // Back up aggressively if we are in the background.
@@ -118,7 +118,7 @@ static const int64_t SF_CHECK_UPLOAD_LEEWAY = 5 * NSEC_PER_SEC;
                 self->_numRejects++;
             }
         }
-        
+
         if (self->_numRejects >= SF_REJECT_LIMIT) {
             NSLog(@"Drop a batch due to reject limit reached");
             [self->_batches removeObjectAtIndex:0];
@@ -144,7 +144,7 @@ static const int64_t SF_CHECK_UPLOAD_LEEWAY = 5 * NSEC_PER_SEC;
             SF_DEBUG(@"App is in background");
             return;
         }
-        
+
         dispatch_async(self->_serial, ^{
             if (self->_uploadTask) {
                 SF_DEBUG(@"An upload is in progress");
@@ -154,36 +154,36 @@ static const int64_t SF_CHECK_UPLOAD_LEEWAY = 5 * NSEC_PER_SEC;
                 SF_DEBUG(@"No batches to upload");
                 return;
             }
-            
+
             Sift *sift = self->_sift;
             if (!sift) {
                 SF_DEBUG(@"Reference to Sift object was lost");
                 return;
             }
-            
+
             if (!sift.accountId.length || !sift.beaconKey.length || !sift.serverUrlFormat.length) {
                 SF_DEBUG(@"Lack accountId (%@), beaconKey (%@), and/or serverUrlFormat (%@)", sift.accountId, sift.beaconKey, sift.serverUrlFormat);
                 return;
             }
-            
+
             NSURL *serverUrl = [NSURL URLWithString:[NSString stringWithFormat:sift.serverUrlFormat, sift.accountId]];
             SF_DEBUG(@"serverUrl: %@", serverUrl);
             if(!serverUrl) {
                 SF_DEBUG(@"Could not construct server URL: serverUrlFormat=%@, accountId=%@", sift.serverUrlFormat, sift.accountId);
                 return;
             }
-            
+
             NSString *encodedBeaconKey = [[sift.beaconKey dataUsingEncoding:NSASCIIStringEncoding] base64EncodedStringWithOptions:0];
-            
+
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:serverUrl];
             [request setHTTPMethod:@"PUT"];
             [request setValue:[@"Basic " stringByAppendingString:encodedBeaconKey] forHTTPHeaderField:@"Authorization"];
             [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
             [request setValue:@"gzip" forHTTPHeaderField:@"Content-Encoding"];
             SF_DEBUG(@"request: %@", request);
-            
+
             self->_responseBody = [NSMutableData new];
-            
+
             if (self->_batches && self->_batches.count && [self->_batches objectAtIndex:0]) {
                 NSData *body = [[SiftEvent listRequest:[self->_batches objectAtIndex:0]] gzippedData];
                 self->_uploadTask = [self->_session uploadTaskWithRequest:request fromData:body];

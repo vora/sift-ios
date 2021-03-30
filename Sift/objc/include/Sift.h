@@ -8,6 +8,8 @@
 #import "SiftEvent.h"
 #import "SiftQueueConfig.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  * This is the main interface you interact with Sift.
  *
@@ -27,10 +29,23 @@
  */
 @interface Sift : NSObject
 
+- (instancetype)init NS_UNAVAILABLE;
+
 /** @return the shared instance of Sift. */
-+ (instancetype)sharedInstance;
++ (null_unspecified instancetype)sharedInstance NS_REFINED_FOR_SWIFT;
+// null_unspecified because the delegated initializer can actually return nil,
+// but I think it'd be due to programmer error
 
 @property (readonly) NSString *sdkVersion;
+
+/// Configure Sift with your account ID and beacon key.
+///
+/// The values provided are persisted to device storage.
+///
+/// @param accountId Your account id
+/// @param beaconKey Your beacon key
+- (void)configureWithAccountId:(NSString *)accountId beaconKey:(NSString *)beaconKey
+    NS_SWIFT_NAME(configure(accountId:beaconKey:));
 
 /** @return YES if the queue exists. */
 - (BOOL)hasEventQueue:(NSString *)identifier;
@@ -66,7 +81,7 @@
 /**
  * Unset the user id attached to the Sift object.
  */
-- (void)unsetUserId;
+- (void)unsetUserId DEPRECATED_MSG_ATTRIBUTE("Set userId property to nil");
 
 /**
  * @name Configurations.
@@ -86,21 +101,21 @@
  *
  * NOTE: This is persisted to device's storage.
  */
-@property NSString *accountId;
+@property (nullable) NSString *accountId;
 
 /**
  * Your beacon key.  Default to nil.
  *
  * NOTE: This is persisted to device's storage.
  */
-@property NSString *beaconKey;
+@property (nullable) NSString *beaconKey;
 
 /**
  * User ID.  Default to nil.
  *
  * NOTE: This is persisted to device's storage.
  */
-@property NSString *userId;
+@property (nullable) NSString *userId;
 
 /**
  * @name Motion sensors.
@@ -170,3 +185,5 @@
 @property NSString *serverUrlFormat;
 
 @end
+
+NS_ASSUME_NONNULL_END
